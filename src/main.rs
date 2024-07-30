@@ -83,7 +83,7 @@ print(f'FOO: {os.environ.get("FOO")}')
 /// Reads `RUST_LOG` from the program environment and prints it
 /// 
 /// This should be used with `load_unsafe`
-async fn load_py() {
+async fn get_py() {
     let output = Command::new("python3")
         .arg("-c")
         .arg(SCRIPT)

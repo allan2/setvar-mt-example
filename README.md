@@ -33,12 +33,13 @@ fn main() {
         .unwrap()
         .block_on(async {
 			std::env::var("FOO");
-            load_py().await;  // access the env var from Python
+            get_py().await;  // access the env var from Python
         });
 }
 ```
 
 If you need to modify environment variables before Tokio runtime startup:
+
 ```rs
 fn main() {
     unsafe {
