@@ -1,0 +1,10 @@
+cargo-features = ["edition2024"]
+
+[package]
+name = "setvar-mt-example"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread"]}
