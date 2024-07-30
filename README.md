@@ -11,11 +11,11 @@ Typical use:
 ```rs
 #[tokio::main]
 async fn main() {
-	// the actual program environment is not modified
-	let env_vars = EnvVars::load();
+    // the actual program environment is not modified
+    let env_vars = EnvVars::load();
 
-	// retrieves from our env var store
-	env_vars.get("FOO");
+    // retrieves from our env var store
+    env_vars.get("FOO");
 }
 ```
 
@@ -27,12 +27,12 @@ fn main() {
         load_unsafe();
     }
 
-	tokio::runtime::Builder::new_multi_thread()
+    tokio::runtime::Builder::new_multi_thread()
         .enable_all()
         .build()
         .unwrap()
         .block_on(async {
-			std::env::var("FOO");
+            std::env::var("FOO");
             get_py().await;  // access the env var from Python
         });
 }
@@ -47,12 +47,12 @@ fn main() {
         std::env::set_var("RUST_LOG", "info");
     }
 
-	tokio::runtime::Builder::new_multi_thread()
+    tokio::runtime::Builder::new_multi_thread()
         .enable_all()
         .build()
         .unwrap()
         .block_on(async {
-			// do things
+            // do things
         });
 }
 ```
